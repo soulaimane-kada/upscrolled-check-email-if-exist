@@ -1,0 +1,42 @@
+{
+  "actorSpecification": 1,
+  "name": "upscrolled-check-email-if-exict",
+  "version": "0.0",
+  "input": {
+    "title": "Upscrolled Check Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "url": {
+        "title": "Email",
+        "type": "string",
+        "description": "An email to be checked if exist on Upscrolled App",
+        "prefill": "Donald_Truck_666@gmail.com",
+        "editor": "textfield"
+      }
+    },
+    "required": ["url"]
+  },
+  "output": {
+    "actorOutputSchemaVersion": 1,
+    "title": "Output schema",
+    "properties": {
+      "success": {
+        "type": "string",
+        "description": "Whether the request succeeded",
+        "template": "{{success}}"
+      },
+      "results": {
+        "type": "string",
+        "description": "Response of checked email",
+        "template": "{{results}}"
+      },
+      "message": {
+        "type": "string",
+        "description": "Error message if success is false",
+        "template": "{{message}}"
+      }
+    },
+    "required": ["success"]
+  }
+}
