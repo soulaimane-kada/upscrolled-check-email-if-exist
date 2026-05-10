@@ -25,7 +25,17 @@ async def check_email(email):
     headers["sentry-trace"] = f"f429d81e34ab49a5b3e2947975f74279-{secrets.token_hex(8)}-0"
 
     try:
-        response = requests.post(api_url, json=data, headers=headers, timeout=10)
+        proxy = await Actor.create_proxy_configuration(groups=['RESIDENTIAL'])
+        proxy_url = await proxy.new_url()
+        
+        response = requests.post(
+            api_url, json=data, headers=headers,
+            proxies={
+                "http": proxy_url,
+                "https": proxy_url,
+            },
+            timeout=10)
+        
         return {'success': True, 'results': response.json()}
     except:
         return {'success': False, 'message': 'error'}
