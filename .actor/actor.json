@@ -15,7 +15,7 @@
         "editor": "textfield"
       }
     },
-    "required": ["url"]
+    "required": ["email"]
   },
   "output": {
     "actorOutputSchemaVersion": 1,
