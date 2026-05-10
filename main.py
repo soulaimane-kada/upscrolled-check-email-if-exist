@@ -1,7 +1,7 @@
 from playwright.async_api import async_playwright
 from apify import Actor
-from curl_cffi import requests
-import json, secrets, asyncio
+# from curl_cffi import requests
+import json, secrets, asyncio, requests
 
 
 async def check_email(email):
@@ -29,7 +29,7 @@ async def check_email(email):
         proxy_url = await proxy.new_url()
         
         response = requests.post(
-            api_url, json=data, headers=headers, http_version="v2",
+            api_url, json=data, headers=headers,
             proxies={
                 "http": proxy_url,
                 "https": proxy_url,
