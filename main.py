@@ -29,7 +29,7 @@ async def check_email(email):
         proxy_url = await proxy.new_url()
         
         response = requests.post(
-            api_url, data=data, headers=headers,
+            api_url, json=data, headers=headers, http_version="v2",
             proxies={
                 "http": proxy_url,
                 "https": proxy_url,
