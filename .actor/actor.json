@@ -7,7 +7,7 @@
     "type": "object",
     "schemaVersion": 1,
     "properties": {
-      "url": {
+      "email": {
         "title": "Email",
         "type": "string",
         "description": "An email to be checked if exist on Upscrolled App",
