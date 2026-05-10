@@ -24,9 +24,11 @@ async def check_email(email):
     headers['content-length'] = str(len(json.dumps(data, separators=(',', ':')).encode('utf-8')))
     headers["sentry-trace"] = f"f429d81e34ab49a5b3e2947975f74279-{secrets.token_hex(8)}-0"
 
-    response = requests.post(api_url, json=data, headers=headers)
-
-    print(response.json())
+    try:
+        response = requests.post(api_url, json=data, headers=headers, timeout=10)
+        return {'success': True, 'results': response.json()}
+    except:
+        return {'success': False, 'message': 'error'}
 
 
 async def main():
