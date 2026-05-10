@@ -36,5 +36,5 @@ After a successful request, the API will return the data.
 ```
 
 ### Your feedback
-We’re always working on improving the performance of our Actors. So if you’ve got any technical feedback for upscrolled post scraper or simply found a bug, please create an issue on the Actor’s Issues tab in Apify Console.
+We’re always working on improving the performance of our Actors. So if you’ve got any technical feedback for UpScrolled Check Email If Exist or simply found a bug, please create an issue on the Actor’s Issues tab in Apify Console.
 
